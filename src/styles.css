@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --VeryDarkBlue: hsl(234, 12%, 34%);
+  --GrayishBlue: hsl(229, 6%, 66%);
+  --VeryLightGray: hsl(0, 0%, 98%);
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--VeryLightGray);
+  user-select: none;
+}
+section {
+  display: grid;
+  margin: 2.5em;
+  gap: 2rem;
+}
+.cards-container {
+  display: grid;
+  gap: 2em;
+}
+.card {
+  display: grid;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
+  padding: 2em 2em;
+  gap: 0.5em;
+}
+figure {
+  display: flex;
+  justify-content: flex-end;
+}
+h1 {
+  font-size: 24px;
+  font-weight: 200;
+  color: var(--VeryDarkBlue);
+  text-align: center;
+}
+h1 + p {
+  text-align: center;
+}
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--VeryDarkBlue);
+}
+p {
+  color: var(--GrayishBlue);
+  font-size: 15px;
+}
+span {
+  color: var(--VeryDarkBlue);
+  font-weight: 600;
+}
+#supervisor {
+  border-top: 5px solid var(--Cyan);
+}
+#builder {
+  border-top: 5px solid var(--Red);
+}
+#karma {
+  border-top: 5px solid var(--Orange);
+}
+#calculator {
+  border-top: 5px solid var(--Blue);
+}
+@media (min-width: 700px) {
+  section {
+    gap: 1em;
+    margin: 0;
+  }
+  h1 {
+    max-width: 400px;
+    margin: 0 auto;
+    font-size: 2em;
+  }
+  h1 + p {
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .card {
+    max-width: 250px;
+  }
+  .cards-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1175px) {
+  .cards-container {
+    grid-template-areas:
+      ". item2 ."
+      "item1 item2 item4"
+      "item1 item3 item4"
+      ". item3 .";
+  }
+  #supervisor {
+    grid-area: item1;
+  }
+  #builder {
+    grid-area: item2;
+  }
+  #karma {
+    grid-area: item3;
+  }
+  #calculator {
+    grid-area: item4;
+  }
+}
